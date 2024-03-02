@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,11 +10,65 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-    <header>
-        <nav></nav>
+    <header class="w-[90%] lg:w-[80%] mx-auto">
+        <nav>
+            <div class="flex justify-between items-center h-[80px] lg:h-[120px]">
+                <div>
+                    <img class="h-[40px] lg:h-[56px]" src="./images/logo.png" alt="">
+                </div>
+                <div class="flex gap-5">
+                    <div class="hidden lg:flex gap-5">
+                        <img src="./images/Frame 2.png" alt="">
+                        <img src="./images/Frame 3.png" alt="">
+                        <img src="./images/Frame 4.png" alt="">
+                        <img src="./images/Frame 5.png" alt="">
+                    </div>
+                    <button class="text-base lg:text-xl font-bold bg-[#797DFC] text-white py-3 px-7 rounded-full">Sign
+                        In</button>
+                </div>
+            </div>
+        </nav>
+        <!-- banner section -->
+        <section
+            class="bg-[#12132D] h-[500px] bg-[url('./images/bgbanner.png')] bg-no-repeat bg-bottom bg-contain rounded-[35px] flex justify-center">
+            <div class="flex flex-col lg:flex-row justify-center items-center gap-5 lg:gap-20">
+                <div class="space-y-5">
+                    <h1 class="text-3xl lg:text-5xl font-extrabold text-white">Welcome to the <br> <span
+                            class="text-[#3338d6]">ReTro</span> Forum</h1>
+                    <p class="text-sm lg:text-xl text-white font-medium">Share your favorite opinion and win <br
+                            class="lg:hidden"> and wp <br class="hidden lg:block"> forum coffee mug!</p>
+                    <div class="relative flex flex-col gap-2 items-center">
+                        <input class="p-4 lg:p-5 pl-6 rounded-full w-full text-sm lg:text-base" type="text"
+                            placeholder="Search here anything">
+                        <button
+                            class="text-base lg:text-xl font-bold bg-[#797DFC] text-white py-[10px] px-7 rounded-full lg:absolute right-4 top-[8px]">Search</button>
+                    </div>
+                </div>
+                <div
+                    class="w-full lg:w-[371px] border py-6 px-6 lg:py-14 lg:px-10 space-y-3 rounded-2xl bg-white font-semibold">
+                    <div class="flex justify-between">
+                        <p>Registered Users</p>
+                        <p>01</p>
+                    </div>
+                    <div class="flex justify-between">
+                        <p>Forum</p>
+                        <p>05</p>
+                    </div>
+                    <div class="flex justify-between">
+                        <p>Topics</p>
+                        <p>01</p>
+                    </div>
+                    <div class="flex justify-between">
+                        <p>Replies</p>
+                        <p>01</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </header>
-    <main>
+    <main class="w-[90%] lg:w-[80%] mx-auto">
 
     </main>
     <footer>
@@ -21,4 +76,5 @@
     </footer>
     <script src="./script/app.js"></script>
 </body>
+
 </html>
