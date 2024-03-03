@@ -1,6 +1,7 @@
 const discussContainer = document.getElementById('discussContainer');
 const markReadContainer = document.getElementById('markReadContainer');
 const totalCount = document.getElementById('totalCount');
+const cardContainer = document.getElementById('cardContainer');
 let count = 0;
 
 const fetchAllPosts = async () => {
@@ -14,7 +15,7 @@ const fetchAllPosts = async () => {
             <div class="flex justify-center lg:block">
                 <div class="relative w-[72px] h-[72px]">
                     <img class="rounded-xl" src="${posts.image}" alt="">
-                    <div id="active" class="${posts.isActive ? "bg-green-500":"bg-red-500"} other-classes h-4 w-4 rounded-full absolute -top-1 -right-1"></div>
+                    <div id="active" class="${posts.isActive ? "bg-green-500" : "bg-red-500"} other-classes h-4 w-4 rounded-full absolute -top-1 -right-1"></div>
                 </div>
             </div>
             <div class="text-start space-y-2">
@@ -40,19 +41,6 @@ const fetchAllPosts = async () => {
     });
 }
 
-// const active = (posts) => {
-//     let activeIds = document.querySelectorAll("#active");
-//     for (const activeId of activeIds){
-//         if (posts.isActive === true){
-//             activeId.classList.add('bg-green-500')
-//         }
-//         else{
-//             activeId.classList.add('bg-red-600')
-//         }
-//         // console.log(activeId)
-//     }
-// }
-
 const readBtn = (title, view) => {
     count++;
     totalCount.innerText = count;
@@ -75,8 +63,31 @@ const fetchAllLatestPost = async () => {
     const fetchs = await fetch(url);
     const res = await fetchs.json();
     const data = await res.forEach((item) => {
-        //onclick="AddToList(${title.replace(/'/g,'@')})"
+        const latestPost = document.createElement('div');
+        latestPost.innerHTML = `
+        <div class="card bg-base-100 shadow-xl border h-[482px]">
+            <figure class="px-5 pt-5">
+                <img class="rounded-xl" src="${item.cover_image}" />
+            </figure>
+            <div class="text-start p-5 space-y-3">
+                <p class="text-sm"><i class='bx bx-calendar'></i><span id="date"> ${item.author.posted_date?`${item.author.posted_date}`:'No publish date'}</span></p>
+                <h2 class="text-lg font-extrabold">${item.title}</h2>
+                <p class="text-base text-[#12132D99]">${item.description}</p>
+                <div class="flex gap-4">
+                    <div class="w-[50px] h-[50px]">
+                        <img class="rounded-full" src="${item.profile_image}" alt="">
+                    </div>
+                    <div>
+                        <h1 class="font-extrabold">${item.author.name}</h1>
+                        <p class="text-[#12132D99]">${item.author.designation ? `${item.author.designation}`:'Unknown'}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `;
+        cardContainer.appendChild(latestPost)
     })
 }
 
 fetchAllLatestPost()
+//onclick="AddToList(${title.replace(/'/g,'@')})"
