@@ -9,6 +9,8 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./style.css">
+    <!-- boxicons cdn -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -33,12 +35,12 @@
         <!-- banner section -->
         <section
             class="bg-[#12132D] h-[500px] bg-[url('./images/bgbanner.png')] bg-no-repeat bg-bottom bg-contain rounded-[35px] flex justify-center">
-            <div class="flex flex-col lg:flex-row justify-center items-center gap-5 lg:gap-20">
-                <div class="space-y-5">
+            <div class="flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-20 w-[85%] lg:w-full">
+                <div class="space-y-3 lg:space-y-5">
                     <h1 class="text-3xl lg:text-5xl font-extrabold text-white">Welcome to the <br> <span
                             class="text-[#3338d6]">ReTro</span> Forum</h1>
-                    <p class="text-sm lg:text-xl text-white font-medium">Share your favorite opinion and win <br
-                            class="lg:hidden"> and wp <br class="hidden lg:block"> forum coffee mug!</p>
+                    <p class="text-base lg:text-xl text-white font-medium w-[90%]">Share your favorite opinion and win
+                        and wp <br class="hidden lg:block"> forum coffee mug!</p>
                     <div class="relative flex flex-col gap-2 items-center">
                         <input class="p-4 lg:p-5 pl-6 rounded-full w-full text-sm lg:text-base" type="text"
                             placeholder="Search here anything">
@@ -69,10 +71,126 @@
         </section>
     </header>
     <main class="w-[90%] lg:w-[80%] mx-auto">
-
+        <!-- let's discuss -->
+        <section>
+            <div class="text-center space-y-3 my-10 lg:my-20">
+                <h1 class="text-xl lg:text-4xl font-extrabold text-[#12132D]">Let’s Discuss</h1>
+                <p class="text-[#12132D99] w-[89%] lg:max-w-[50%] mx-auto text-center">Yes, you can run unit tests and
+                    view the results
+                    directly within the app. The integrated testing features allow for a streamlined .</p>
+                <div class="flex flex-col lg:grid grid-cols-6 gap-7 pt-10">
+                    <div id="discussContainer" class="col-span-4 flex flex-col gap-10">
+                        <div class="flex flex-col lg:flex-row bg-[#797DFC1A] p-4 lg:p-7 rounded-3xl gap-5">
+                            <div class="flex justify-center lg:block">
+                                <div class="relative">
+                                    <img src="./images/icons/Rectangle 4.png" alt="">
+                                    <div class="h-3 w-3 bg-red-600 rounded-full absolute top-0 right-0"></div>
+                                </div>
+                            </div>
+                            <div class="text-start space-y-2">
+                                <div class="flex gap-5 text-sm font-bold">
+                                    <p># <span>hello</span></p>
+                                    <p>Author : <span>world</span></p>
+                                </div>
+                                <h1 class="text-xl font-extrabold">10 Kids Unaware of Their Halloween Costume</h1>
+                                <p class="text-[#12132D99] py-2">It’s one thing to subject yourself to ha Halloween
+                                    costume mishap because, hey that’s your prerogative</p>
+                                <div
+                                    class="flex flex-col lg:flex-row justify-between border-t-2 border-dashed border-[#12132D40] py-4">
+                                    <div class="flex gap-6 text-lg">
+                                        <li class="flex gap-2 items-center"><img
+                                                src="./images/icons/tabler-icon-message-2.png" alt=""><span>560</span>
+                                        </li>
+                                        <li class="flex gap-2 items-center"><img src="./images/icons/Group 16.png"
+                                                alt=""><span>1568</span></li>
+                                        <li class="flex gap-2 items-center"><img src="./images/icons/Group 18.png"
+                                                alt=""><span>5</span>min</li>
+                                    </div>
+                                    <button class="flex justify-end mt-6"><img src="./images/icons/Group 40106.png"
+                                            alt=""></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-2 border p-4 lg:p-6 bg-[#12132D0D] rounded-3xl">
+                        <div class="flex justify-between pb-5 text-lg">
+                            <p class="font-extrabold">Title</p>
+                            <p>Mark as read(<span>4</span>)</p>
+                        </div>
+                        <div id="markReadContainer" class="space-y-4">
+                            <div class="flex items-center px-4 py-6 rounded-2xl bg-white">
+                                <p class="max-w-[70%] text-start font-semibold text-[#12132D]">10 Kids Unaware of Their
+                                    Halloween Costume</p>
+                                <li class="flex gap-2 items-center text-[#12132D99]"><img
+                                        src="./images/icons/Group 16.png" alt=""><span>1568</span></li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- join our forum -->
+        <section
+            class="bg-[#12132D] lg:h-[410px] rounded-[35px] flex flex-col-reverse lg:flex-row justify-center items-center gap-20 my-10 lg:my-20 py-10 px-5 lg:px-0 lg:py-0">
+            <div class="space-y-5 flex flex-col lg:block">
+                <h1 class="text-3xl lg:text-4xl font-extrabold text-white">Join Our Forum</h1>
+                <p class="text-base text-white font-medium">Share your favorite opinion and win and wp forum
+                    coffee mug! Yes, you can <br class="hidden lg:block">run unit tests and view the results directly
+                    within the app. </p>
+                <button
+                    class="text-base lg:text-xl font-bold bg-[#797DFC] text-white py-[14px] px-7 rounded-full">Registered
+                    Now</button>
+            </div>
+            <div class="flex justify-center">
+                <img class="lg:w-[90%]" src="./images/joinforum.png" alt="">
+            </div>
+        </section>
+        <!-- Latest Posts -->
+        <section>
+            <div class="text-center space-y-3 my-10 lg:my-20">
+                <h1 class="text-3xl lg:text-4xl font-extrabold text-[#12132D]">Latest Posts</h1>
+                <p class="text-[#12132D99] w-[89%] lg:max-w-[50%] mx-auto text-center">Yes, you can run unit tests and
+                    view the results directly within the app. The integrated testing features allow for a streamlined .
+                </p>
+                <div id="cardContainer" class="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-10 pt-5 lg:pt-14">
+                    <div class="card bg-base-100 shadow-xl border">
+                        <figure class="px-5 pt-5">
+                            <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes"
+                                class="rounded-xl" />
+                        </figure>
+                        <div class="text-start p-5 space-y-3">
+                            <p class="text-sm"><i class='bx bx-calendar'></i><span id="date"> 29 jan 2024</span></p>
+                            <h2 class="text-lg font-extrabold">What will a mars habitat force that impact in our daily
+                                life!!!</h2>
+                            <p class="text-base text-[#12132D99]">Yes, you can run unit tests and view the results
+                                directly within the app. </p>
+                            <div class="flex gap-4">
+                                <img src="./images/Frame 5.png" alt="">
+                                <div>
+                                    <h1 class="font-extrabold">Rafizul islam</h1>
+                                    <p class="text-[#12132D99]">unknon</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-    <footer>
-
+    <footer class="bg-[#e9e9ee]">
+        <div class="text-center w-[90%] lg:w-[80%] mx-auto h-[350px] lg:h-[490px] flex flex-col justify-center items-center gap-5">
+            <h1 class="text-3xl lg:text-4xl font-extrabold text-[#12132D]">ReTro</h1>
+            <p class="text-base font-medium text-[#12132D99]">Contrary to popular belief, Lorem Ipsum is not
+                simplyrandom text. It has roots in a <br class="hidden lg:block">piece of classical Latin literature
+                from 45 BC.</p>
+            <div class="flex justify-center list-none gap-5 text-2xl">
+                <li><i class='bx bxl-twitter'></i></li>
+                <li><i class='bx bxl-facebook'></i></li>
+                <li><i class='bx bxl-instagram'></i></li>
+                <li><i class='bx bxl-github'></i></li>
+            </div>
+            <p class="text-sm text-[#12132D99] text-center mt-5">2024, All Rights Reserved.</p>
+        </div>
     </footer>
     <script src="./script/app.js"></script>
 </body>
