@@ -9,9 +9,8 @@ const fetchAllPosts = async () => {
     const url = 'https://openapi.programming-hero.com/api/retro-forum/posts';
     const fetchs = await fetch(url);
     const res = await fetchs.json();
-    loaddata(res)
+    loaddata(res);
 }
-
 const loaddata = (posts) => {
     discussContainer.innerHTML = ''
     const data = posts.posts.forEach((posts) => {
@@ -64,7 +63,6 @@ const readBtn = (title, view) => {
     markReadContainer.appendChild(div);
 }
 fetchAllPosts();
-
 const fetchAllLatestPost = async () => {
     const url = 'https://openapi.programming-hero.com/api/retro-forum/latest-posts';
     const fetchs = await fetch(url);
@@ -92,11 +90,10 @@ const fetchAllLatestPost = async () => {
             </div>
         </div>
         `;
-        cardContainer.appendChild(latestPost)
+        cardContainer.appendChild(latestPost);
     })
 }
-
-fetchAllLatestPost()
+fetchAllLatestPost();
 // search function
 const search = async () => {
     const searchField = document.getElementById('searchField');
@@ -106,17 +103,25 @@ const search = async () => {
     discussContainer.innerHTML = ''
     loadingSpinner(true)
     setTimeout(() => {
-        loaddata(res)
-        loadingSpinner(false)
-    }, 2000)
+        loaddata(res);
+        if (res.posts.length === 0){
+            const result = document.createElement('div')
+            result.innerHTML = `
+            <img class="rounded-xl" src="./images/noData.jpg" alt="">
+            `
+            discussContainer.appendChild(result)
+            console.log(result)
+        }
+        loadingSpinner(false);
+    }, 2000);
 }
 // loadingSpinner 
 const loadingSpinner = (isLoading) => {
     const loadingSpinner = document.getElementById('loadingSpinner');
     if (isLoading) {
-        loadingSpinner.classList.remove('hidden')
+        loadingSpinner.classList.remove('hidden');
     }
     else {
-        loadingSpinner.classList.add('hidden')
+        loadingSpinner.classList.add('hidden');
     }
 }
