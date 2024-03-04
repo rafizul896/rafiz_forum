@@ -33,8 +33,7 @@
             </div>
         </nav>
         <!-- banner section -->
-        <section
-            class="bg-[#12132D] h-[500px] bg-[url('./images/bgbanner.png')] bg-no-repeat bg-bottom bg-contain rounded-[35px] flex justify-center">
+        <section class="bg-[#12132D] h-[500px] bg-[url('./images/bgbanner.png')] bg-no-repeat bg-bottom bg-contain rounded-[35px] flex justify-center">
             <div class="flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-20 w-[85%] lg:w-full">
                 <div class="space-y-3 lg:space-y-5">
                     <h1 class="text-3xl lg:text-5xl font-extrabold text-white">Welcome to the <br> <span
@@ -42,10 +41,9 @@
                     <p class="text-base lg:text-xl text-white font-medium w-[90%]">Share your favorite opinion and win
                         and wp <br class="hidden lg:block"> forum coffee mug!</p>
                     <div class="relative flex flex-col gap-2 items-center">
-                        <input class="p-4 lg:p-5 pl-6 rounded-full w-full text-sm lg:text-base" type="text"
+                        <input id="searchField" class="p-4 lg:p-5 pl-6 rounded-full w-full text-sm lg:text-base" type="text"
                             placeholder="Search here anything">
-                        <button
-                            class="text-base lg:text-xl font-bold bg-[#797DFC] text-white py-[10px] px-7 rounded-full lg:absolute right-4 top-[8px]">Search</button>
+                        <button onclick="search()" class="text-base lg:text-xl font-bold bg-[#797DFC] text-white py-[10px] px-7 rounded-full lg:absolute right-4 top-[8px]">Search</button>
                     </div>
                 </div>
                 <div

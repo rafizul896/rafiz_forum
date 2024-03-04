@@ -2,13 +2,19 @@ const discussContainer = document.getElementById('discussContainer');
 const markReadContainer = document.getElementById('markReadContainer');
 const totalCount = document.getElementById('totalCount');
 const cardContainer = document.getElementById('cardContainer');
+const searchBtn = document.getElementById('searchBtn');
 let count = 0;
 
 const fetchAllPosts = async () => {
     const url = 'https://openapi.programming-hero.com/api/retro-forum/posts';
     const fetchs = await fetch(url);
     const res = await fetchs.json();
-    const data = await res.posts.forEach((posts) => {
+    loaddata(res)
+}
+
+const loaddata = (posts) => {
+    discussContainer.innerHTML = ''
+    const data =  posts.posts.forEach((posts) => {
         const post = document.createElement('div');
         post.innerHTML = `
         <div class="flex flex-col lg:flex-row bg-[#797DFC1A] p-4 lg:p-7 rounded-3xl gap-5">
@@ -37,7 +43,6 @@ const fetchAllPosts = async () => {
         </div>
         `;
         discussContainer.appendChild(post);
-        // active(posts)
     });
 }
 
@@ -70,7 +75,7 @@ const fetchAllLatestPost = async () => {
                 <img class="rounded-xl" src="${item.cover_image}" />
             </figure>
             <div class="text-start p-5 space-y-3">
-                <p class="text-sm"><i class='bx bx-calendar'></i><span id="date"> ${item.author.posted_date?`${item.author.posted_date}`:'No publish date'}</span></p>
+                <p class="text-sm"><i class='bx bx-calendar'></i><span id="date"> ${item.author.posted_date ? `${item.author.posted_date}` : 'No publish date'}</span></p>
                 <h2 class="text-lg font-extrabold">${item.title}</h2>
                 <p class="text-base text-[#12132D99]">${item.description}</p>
                 <div class="flex gap-4">
@@ -79,7 +84,7 @@ const fetchAllLatestPost = async () => {
                     </div>
                     <div>
                         <h1 class="font-extrabold">${item.author.name}</h1>
-                        <p class="text-[#12132D99]">${item.author.designation ? `${item.author.designation}`:'Unknown'}</p>
+                        <p class="text-[#12132D99]">${item.author.designation ? `${item.author.designation}` : 'Unknown'}</p>
                     </div>
                 </div>
             </div>
@@ -90,4 +95,17 @@ const fetchAllLatestPost = async () => {
 }
 
 fetchAllLatestPost()
+
+const search = async () => {
+    const searchField = document.getElementById('searchField');
+    const searchText = searchField.value;
+    console.log(searchText);
+    const fetchs = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`);
+    const res = await fetchs.json();
+    discussContainer.innerHTML = ''
+    loaddata(res)
+}
+
+
+
 //onclick="AddToList(${title.replace(/'/g,'@')})"
