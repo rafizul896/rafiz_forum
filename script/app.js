@@ -4,7 +4,7 @@ const totalCount = document.getElementById('totalCount');
 const cardContainer = document.getElementById('cardContainer');
 const searchBtn = document.getElementById('searchBtn');
 let count = 0;
-
+// fetchAllPosts
 const fetchAllPosts = async () => {
     const url = 'https://openapi.programming-hero.com/api/retro-forum/posts';
     const fetchs = await fetch(url);
@@ -37,7 +37,7 @@ const loaddata = (posts) => {
                         <li class="flex gap-2 items-center"><img src="./images/icons/Group 16.png" alt=""><span>${posts.view_count}</span></li>
                         <li class="flex gap-2 items-center"><img src="./images/icons/Group 18.png" alt=""><span>${posts.posted_time}</span>min</li>
                     </div>
-                    <button onclick="readBtn('${posts.title}','${posts.view_count}')" class="flex justify-end mt-6"><img src="./images/icons/Group 40106.png" alt=""></button>
+                    <button onclick="readBtn('${posts.title.replace("'",'')}','${posts.view_count}')" class="flex justify-end mt-6"><img src="./images/icons/Group 40106.png" alt=""></button>
                 </div>
             </div>
         </div>
@@ -45,9 +45,12 @@ const loaddata = (posts) => {
         discussContainer.appendChild(post);
     });
 }
-
+// click readbtn:
 const readBtn = (title, view) => {
     count++;
+    if (count > 0){
+        document.getElementById('checkColor').style.color = '#3DCE09';
+    }
     totalCount.innerText = count;
     const div = document.createElement('div');
     div.innerHTML = `
@@ -60,7 +63,6 @@ const readBtn = (title, view) => {
         `
     markReadContainer.appendChild(div);
 }
-
 fetchAllPosts();
 
 const fetchAllLatestPost = async () => {
@@ -95,7 +97,7 @@ const fetchAllLatestPost = async () => {
 }
 
 fetchAllLatestPost()
-
+// search function
 const search = async () => {
     const searchField = document.getElementById('searchField');
     const searchText = searchField.value;
@@ -109,9 +111,7 @@ const search = async () => {
         loadingSpinner(false)
     }, 2000)
 }
-
 // loadingSpinner 
-
 const loadingSpinner = (isLoading) => {
     const loadingSpinner = document.getElementById('loadingSpinner');
     if (isLoading) {
@@ -121,5 +121,3 @@ const loadingSpinner = (isLoading) => {
     loadingSpinner.classList.add('hidden')
     }
 }
-
-//onclick="AddToList(${title.replace(/'/g,'@')})"

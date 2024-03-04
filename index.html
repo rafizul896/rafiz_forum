@@ -21,14 +21,13 @@
                     <img class="h-[40px] lg:h-[56px]" src="./images/logo.png" alt="">
                 </div>
                 <div class="flex gap-5">
-                    <div class="hidden lg:flex gap-5">
-                        <img title="Home" src="./images/Frame 2.png" alt="">
-                        <img title="Edit" src="./images/Frame 3.png" alt="">
-                        <img title="Add" src="./images/Frame 4.png" alt="">
-                        <img title="Profile" src="./images/Frame 5.png" alt="">
+                    <div class="hidden lg:flex items-center text-3xl  gap-5 list-none">
+                        <li class="border border-[#12132D33] text-[#12132D99] px-3 hover:text-[#797DFC] hover:border-0 py-[8px] rounded-full" title="Home"><i class='bx bx-home' ></i></li>
+                        <li class="border border-[#12132D33] text-[#12132D99] px-3 hover:text-[#797DFC] hover:border-0 py-[8px] rounded-full" title="Edit"><i class='bx bx-pencil'></i></li>
+                        <li class="border border-[#12132D33] text-[#12132D99] px-3 hover:text-[#797DFC] hover:border-0 py-[8px] rounded-full" title="Add"><i class='bx bx-user-plus'></i></li>
+                        <li class="border border-[#12132D33] text-[#12132D99] px-3 hover:text-[#797DFC] hover:border-0 py-[8px] rounded-full" title="Profile"><i class='bx bxs-flag-alt' ></i></li>
                     </div>
-                    <button class="text-base lg:text-xl font-bold bg-[#797DFC] text-white py-3 px-7 rounded-full">Sign
-                        In</button>
+                    <button class="text-base lg:text-xl font-bold bg-[#797DFC] hover:bg-[#393fe6] text-white py-3 px-7 rounded-full">Sign In</button>
                 </div>
             </div>
         </nav>
@@ -38,12 +37,11 @@
                 <div class="space-y-3 lg:space-y-5">
                     <h1 class="text-3xl lg:text-5xl font-extrabold text-white">Welcome to the <br> <span
                             class="text-[#3338d6]">ReTro</span> Forum</h1>
-                    <p class="text-base lg:text-xl text-white font-medium w-[90%]">Share your favorite opinion and win
-                        and wp <br class="hidden lg:block"> forum coffee mug!</p>
+                    <p class="text-base lg:text-xl text-white font-medium w-[90%]">Share your favorite opinion and win and wp<br class="hidden lg:block"> forum coffee mug!</p>
                     <div class="relative flex flex-col gap-2 items-center">
-                        <input id="searchField" class="p-4 lg:p-5 pl-6 rounded-full w-full text-sm lg:text-base" type="text"
+                        <input id="searchField" class="p-4 lg:p-5 pl-6 rounded-full w-full text-sm lg:text-base border-0 outline-[#393fe6]" type="text"
                             placeholder="Search here anything">
-                        <button onclick="search()" class="text-base lg:text-xl font-bold bg-[#797DFC] text-white py-[10px] px-7 rounded-full lg:absolute right-4 top-[8px]">Search</button>
+                        <button onclick="search()" class="text-base lg:text-xl font-bold bg-[#797DFC] hover:bg-[#393fe6] text-white py-[10px] px-7 rounded-full lg:absolute right-4 top-[8px]">Search</button>
                     </div>
                 </div>
                 <div
@@ -81,9 +79,12 @@
                 <div class="flex flex-col lg:grid grid-cols-6 gap-7 pt-10">
                     <div id="discussContainer" class="col-span-4 flex flex-col gap-10"></div>
                     <div class="col-span-2 border p-4 lg:p-6 bg-[#12132D0D] rounded-3xl">
-                        <div class="flex justify-between pb-5 text-lg">
+                        <div class="flex justify-between items-center pb-5 text-lg">
                             <p class="font-extrabold">Title</p>
-                            <p>Mark as read( <span id="totalCount"></span> )</p>
+                            <div class="flex items-center gap-1">
+                                <i id="checkColor" class='bx bx-check-double text-2xl font-bold'></i>
+                                <p class="text-base text-[#12132D99]">Mark as read ( <span id="totalCount" class="text-black"></span> )</p>
+                            </div>
                         </div>
                         <div id="markReadContainer" class="space-y-4"></div>
                     </div>
