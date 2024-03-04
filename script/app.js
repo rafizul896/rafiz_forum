@@ -16,7 +16,7 @@ const loaddata = (posts) => {
     const data = posts.posts.forEach((posts) => {
         const post = document.createElement('div');
         post.innerHTML = `
-        <div class="flex flex-col lg:flex-row bg-[#797DFC1A] p-4 lg:p-7 rounded-3xl gap-5">
+        <div class="flex flex-col lg:flex-row bg-[#797DFC1A] p-4 lg:p-7 rounded-3xl gap-5 lg:relative">
             <div class="flex justify-center lg:block">
                 <div class="relative w-[72px] h-[72px]">
                     <img class="rounded-xl" src="${posts.image}" alt="">
@@ -30,13 +30,13 @@ const loaddata = (posts) => {
                 </div>
                 <h1 class="text-xl font-extrabold">${posts.title}</h1>
                 <p class="text-[#12132D99] py-2">${posts.description}</p>
-                <div class="flex flex-col lg:flex-row justify-between border-t-2 border-dashed border-[#12132D40] py-4">
+                <div class="flex flex-col lg:flex-row justify-between lg:items-center border-t-2 border-dashed border-[#12132D40] py-4">
                     <div class="flex gap-6 text-lg">
                         <li class="flex gap-2 items-center"><img src="./images/icons/tabler-icon-message-2.png" alt=""><span>${posts.comment_count}</span></li>
                         <li class="flex gap-2 items-center"><img src="./images/icons/Group 16.png" alt=""><span>${posts.view_count}</span></li>
                         <li class="flex gap-2 items-center"><img src="./images/icons/Group 18.png" alt=""><span>${posts.posted_time}</span>min</li>
                     </div>
-                    <button onclick="readBtn('${posts.title.replace("'", '')}','${posts.view_count}')" class="flex justify-end mt-6"><img src="./images/icons/Group 40106.png" alt=""></button>
+                    <button onclick="readBtn('${posts.title.replace("'", '')}','${posts.view_count}')" class="flex justify-end mt-6 lg:absolute lg:right-10"><img src="./images/icons/Group 40106.png" alt=""></button>
                 </div>
             </div>
         </div>
