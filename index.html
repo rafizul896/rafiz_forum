@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <header class="w-[90%] lg:w-[80%] mx-auto">
+    <header class="w-[90%] lg:w-[80%] mx-auto max-w-[1440px]">
         <nav>
             <div class="flex justify-between items-center h-[80px] lg:h-[120px]">
                 <div>
@@ -22,10 +22,10 @@
                 </div>
                 <div class="flex gap-5">
                     <div class="hidden lg:flex gap-5">
-                        <img src="./images/Frame 2.png" alt="">
-                        <img src="./images/Frame 3.png" alt="">
-                        <img src="./images/Frame 4.png" alt="">
-                        <img src="./images/Frame 5.png" alt="">
+                        <img title="Home" src="./images/Frame 2.png" alt="">
+                        <img title="Edit" src="./images/Frame 3.png" alt="">
+                        <img title="Add" src="./images/Frame 4.png" alt="">
+                        <img title="Profile" src="./images/Frame 5.png" alt="">
                     </div>
                     <button class="text-base lg:text-xl font-bold bg-[#797DFC] text-white py-3 px-7 rounded-full">Sign
                         In</button>
@@ -68,14 +68,16 @@
             </div>
         </section>
     </header>
-    <main class="w-[90%] lg:w-[80%] mx-auto">
+    <main class="w-[90%] lg:w-[80%] mx-auto max-w-[1440px]">
         <!-- let's discuss -->
         <section>
             <div class="text-center space-y-3 my-10 lg:my-20">
                 <h1 class="text-xl lg:text-4xl font-extrabold text-[#12132D]">Let’s Discuss</h1>
-                <p class="text-[#12132D99] w-[89%] lg:max-w-[50%] mx-auto text-center">Yes, you can run unit tests and
-                    view the results
-                    directly within the app. The integrated testing features allow for a streamlined .</p>
+                <p class="text-[#12132D99] w-[89%] lg:max-w-[50%] mx-auto text-center">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
+                <!-- loading spinner -->
+                <div>
+                    <span id="loadingSpinner" class="hidden loading loading-infinity loading-lg text-[#797dfc]"></span>
+                </div>
                 <div class="flex flex-col lg:grid grid-cols-6 gap-7 pt-10">
                     <div id="discussContainer" class="col-span-4 flex flex-col gap-10"></div>
                     <div class="col-span-2 border p-4 lg:p-6 bg-[#12132D0D] rounded-3xl">
@@ -111,43 +113,26 @@
                 <p class="text-[#12132D99] w-[89%] lg:max-w-[50%] mx-auto text-center">Yes, you can run unit tests and
                     view the results directly within the app. The integrated testing features allow for a streamlined .
                 </p>
-                <div id="cardContainer" class="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-10 pt-5 lg:pt-14">
-                    <!-- <div class="card bg-base-100 shadow-xl border">
-                        <figure class="px-5 pt-5">
-                            <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes"
-                                class="rounded-xl" />
-                        </figure>
-                        <div class="text-start p-5 space-y-3">
-                            <p class="text-sm"><i class='bx bx-calendar'></i><span id="date"> 29 jan 2024</span></p>
-                            <h2 class="text-lg font-extrabold">What will a mars habitat force that impact in our daily
-                                life!!!</h2>
-                            <p class="text-base text-[#12132D99]">Yes, you can run unit tests and view the results
-                                directly within the app. </p>
-                            <div class="flex gap-4">
-                                <img src="./images/Frame 5.png" alt="">
-                                <div>
-                                    <h1 class="font-extrabold">Rafizul islam</h1>
-                                    <p class="text-[#12132D99]">unknon</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
+                <!-- loading spinner -->
+                <div>
+                    <span  id="loadingSpinner" class="hidden loading loading-infinity loading-lg text-[#797dfc]"></span>
                 </div>
+                <div id="cardContainer" class="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-10 pt-5 lg:pt-14"></div>
             </div>
         </section>
     </main>
     <footer class="bg-[#e9e9ee]">
         <div
-            class="text-center w-[90%] lg:w-[80%] mx-auto h-[350px] lg:h-[490px] flex flex-col justify-center items-center gap-5">
+            class="text-center w-[90%] lg:w-[80%] mx-auto max-w-[1440px] h-[350px] lg:h-[490px] flex flex-col justify-center items-center gap-5">
             <h1 class="text-3xl lg:text-4xl font-extrabold text-[#12132D]">ReTro</h1>
             <p class="text-base font-medium text-[#12132D99]">Contrary to popular belief, Lorem Ipsum is not
                 simplyrandom text. It has roots in a <br class="hidden lg:block">piece of classical Latin literature
                 from 45 BC.</p>
             <div class="flex justify-center list-none gap-5 text-2xl">
-                <li><i class='bx bxl-twitter'></i></li>
-                <li><i class='bx bxl-facebook'></i></li>
-                <li><i class='bx bxl-instagram'></i></li>
-                <li><i class='bx bxl-github'></i></li>
+                <li><i class='bx bxl-twitter hover:text-[#797DFC]'></i></li>
+                <li><i class='bx bxl-facebook hover:text-[#797DFC]'></i></li>
+                <li><i class='bx bxl-instagram hover:text-[#797DFC]'></i></li>
+                <li><i class='bx bxl-github hover:text-[#797DFC]'></i></li>
             </div>
             <p class="text-sm text-[#12132D99] text-center mt-5">2024, All Rights Reserved.</p>
         </div>

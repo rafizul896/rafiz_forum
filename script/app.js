@@ -14,7 +14,7 @@ const fetchAllPosts = async () => {
 
 const loaddata = (posts) => {
     discussContainer.innerHTML = ''
-    const data =  posts.posts.forEach((posts) => {
+    const data = posts.posts.forEach((posts) => {
         const post = document.createElement('div');
         post.innerHTML = `
         <div class="flex flex-col lg:flex-row bg-[#797DFC1A] p-4 lg:p-7 rounded-3xl gap-5">
@@ -103,9 +103,23 @@ const search = async () => {
     const fetchs = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`);
     const res = await fetchs.json();
     discussContainer.innerHTML = ''
-    loaddata(res)
+    loadingSpinner(true)
+    setTimeout(() => {
+        loaddata(res)
+        loadingSpinner(false)
+    }, 2000)
 }
 
+// loadingSpinner 
 
+const loadingSpinner = (isLoading) => {
+    const loadingSpinner = document.getElementById('loadingSpinner');
+    if (isLoading) {
+        loadingSpinner.classList.remove('hidden')
+    }
+    else{
+    loadingSpinner.classList.add('hidden')
+    }
+}
 
 //onclick="AddToList(${title.replace(/'/g,'@')})"
