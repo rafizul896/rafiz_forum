@@ -37,7 +37,7 @@ const loaddata = (posts) => {
                         <li class="flex gap-2 items-center"><img src="./images/icons/Group 16.png" alt=""><span>${posts.view_count}</span></li>
                         <li class="flex gap-2 items-center"><img src="./images/icons/Group 18.png" alt=""><span>${posts.posted_time}</span>min</li>
                     </div>
-                    <button onclick="readBtn('${posts.title.replace("'",'')}','${posts.view_count}')" class="flex justify-end mt-6"><img src="./images/icons/Group 40106.png" alt=""></button>
+                    <button onclick="readBtn('${posts.title.replace("'", '')}','${posts.view_count}')" class="flex justify-end mt-6"><img src="./images/icons/Group 40106.png" alt=""></button>
                 </div>
             </div>
         </div>
@@ -48,7 +48,7 @@ const loaddata = (posts) => {
 // click readbtn:
 const readBtn = (title, view) => {
     count++;
-    if (count > 0){
+    if (count > 0) {
         document.getElementById('checkColor').style.color = '#3DCE09';
     }
     totalCount.innerText = count;
@@ -101,7 +101,6 @@ fetchAllLatestPost()
 const search = async () => {
     const searchField = document.getElementById('searchField');
     const searchText = searchField.value;
-    console.log(searchText);
     const fetchs = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`);
     const res = await fetchs.json();
     discussContainer.innerHTML = ''
@@ -117,7 +116,7 @@ const loadingSpinner = (isLoading) => {
     if (isLoading) {
         loadingSpinner.classList.remove('hidden')
     }
-    else{
-    loadingSpinner.classList.add('hidden')
+    else {
+        loadingSpinner.classList.add('hidden')
     }
 }

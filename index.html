@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Retro Forum</title>
+    <title>RaFiz Forum</title>
     <!-- cdn links -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -18,25 +18,25 @@
         <nav>
             <div class="flex justify-between items-center h-[80px] lg:h-[120px]">
                 <div>
-                    <img class="h-[40px] lg:h-[56px]" src="./images/logo.png" alt="">
+                    <h1 class="text-6xl font-extrabold">RaFiz</h1>
                 </div>
                 <div class="flex gap-5">
                     <div class="hidden lg:flex items-center text-3xl  gap-5 list-none">
-                        <li class="border border-[#12132D33] text-[#12132D99] px-3 hover:text-[#797DFC] hover:border-0 py-[8px] rounded-full" title="Home"><i class='bx bx-home' ></i></li>
-                        <li class="border border-[#12132D33] text-[#12132D99] px-3 hover:text-[#797DFC] hover:border-0 py-[8px] rounded-full" title="Edit"><i class='bx bx-pencil'></i></li>
-                        <li class="border border-[#12132D33] text-[#12132D99] px-3 hover:text-[#797DFC] hover:border-0 py-[8px] rounded-full" title="Add"><i class='bx bx-user-plus'></i></li>
-                        <li class="border border-[#12132D33] text-[#12132D99] px-3 hover:text-[#797DFC] hover:border-0 py-[8px] rounded-full" title="Profile"><i class='bx bxs-flag-alt' ></i></li>
+                        <li class="border border-[#12132D33] text-[#12132D99] px-3 hover:text-[#797DFC] hover:border-[#797DFC99] py-[8px] rounded-full tooltip hover:tooltip-open tooltip-primary" data-tip="Home"><i class='bx bx-home' ></i></li>
+                        <li class="border border-[#12132D33] text-[#12132D99] px-3 hover:text-[#797DFC] hover:border-[#797DFC99] py-[8px] rounded-full tooltip hover:tooltip-open tooltip-primary" data-tip="Edit"><i class='bx bx-pencil'></i></li>
+                        <li class="border border-[#12132D33] text-[#12132D99] px-3 hover:text-[#797DFC] hover:border-[#797DFC99] py-[8px] rounded-full tooltip hover:tooltip-open tooltip-primary" data-tip="Add"><i class='bx bx-user-plus'></i></li>
+                        <li class="border border-[#12132D33] text-[#12132D99] px-3 hover:text-[#797DFC] hover:border-[#797DFC99] py-[8px] rounded-full tooltip hover:tooltip-open tooltip-primary" data-tip="Page"><i class='bx bxs-flag-alt' ></i></li>
                     </div>
                     <button class="text-base lg:text-xl font-bold bg-[#797DFC] hover:bg-[#393fe6] text-white py-3 px-7 rounded-full">Sign In</button>
                 </div>
             </div>
         </nav>
         <!-- banner section -->
-        <section class="bg-[#12132D] h-[500px] bg-[url('./images/bgbanner.png')] bg-no-repeat bg-bottom bg-contain rounded-[35px] flex justify-center">
+        <section class="bg-[#12132D] h-[550px] lg:h-[450px] bg-[url('./images/bgbanner.png')] bg-no-repeat bg-bottom bg-contain rounded-[35px] flex justify-center">
             <div class="flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-20 w-[85%] lg:w-full">
                 <div class="space-y-3 lg:space-y-5">
                     <h1 class="text-3xl lg:text-5xl font-extrabold text-white">Welcome to the <br> <span
-                            class="text-[#3338d6]">ReTro</span> Forum</h1>
+                            class="text-[#3338d6]">RaFiz</span> Forum</h1>
                     <p class="text-base lg:text-xl text-white font-medium w-[90%]">Share your favorite opinion and win and wp<br class="hidden lg:block"> forum coffee mug!</p>
                     <div class="relative flex flex-col gap-2 items-center">
                         <input id="searchField" class="p-4 lg:p-5 pl-6 rounded-full w-full text-sm lg:text-base border-0 outline-[#393fe6]" type="text"
@@ -123,19 +123,18 @@
         </section>
     </main>
     <footer class="bg-[#e9e9ee]">
-        <div
-            class="text-center w-[90%] lg:w-[80%] mx-auto max-w-[1440px] h-[350px] lg:h-[490px] flex flex-col justify-center items-center gap-5">
-            <h1 class="text-3xl lg:text-4xl font-extrabold text-[#12132D]">ReTro</h1>
+        <div class="text-center w-[90%] lg:w-[80%] mx-auto max-w-[1440px] h-[350px] lg:h-[490px] flex flex-col justify-center items-center gap-5">
+            <h1 class="text-3xl lg:text-4xl font-extrabold text-[#12132D]">RaFiz</h1>
             <p class="text-base font-medium text-[#12132D99]">Contrary to popular belief, Lorem Ipsum is not
                 simplyrandom text. It has roots in a <br class="hidden lg:block">piece of classical Latin literature
                 from 45 BC.</p>
-            <div class="flex justify-center list-none gap-5 text-2xl">
-                <li><i class='bx bxl-twitter hover:text-[#797DFC]'></i></li>
-                <li><i class='bx bxl-facebook hover:text-[#797DFC]'></i></li>
-                <li><i class='bx bxl-instagram hover:text-[#797DFC]'></i></li>
-                <li><i class='bx bxl-github hover:text-[#797DFC]'></i></li>
-            </div>
-            <p class="text-sm text-[#12132D99] text-center mt-5">2024, All Rights Reserved.</p>
+                <div class="flex justify-center list-none gap-5 text-2xl border-b-2">
+                    <li><i class='bx bxl-twitter hover:text-[#797DFC]'></i></li>
+                    <li><i class='bx bxl-facebook hover:text-[#797DFC]'></i></li>
+                    <li><i class='bx bxl-instagram hover:text-[#797DFC]'></i></li>
+                    <li><i class='bx bxl-github hover:text-[#797DFC]'></i></li>
+                </div>
+                <p class="text-sm text-[#12132D99] text-center mt-5">2024, All Rights Reserved.</p>
         </div>
     </footer>
     <script src="./script/app.js"></script>
